@@ -13,46 +13,46 @@ namespace WorkingWithSpecificStrings
             Random random = new Random();
 
             int[,] numbers = new int[3, 3];
-            int rowArray = 0;
+            int rowsArray = 0;
             int secondRowArray = 1;
-            int columnArray = 1;
+            int columnsArray = 1;
             int firstColumnArray = 0;
-            int sumSecondRowArray = 0;
-            int multiplicationFirsRowArray = 1;
+            int sumNumbersSecondRowArray = 0;
+            int multiplicationNumbersFirstRowArray = 1;
 
-            for (int row = 0; row < numbers.GetLength(rowArray); row++)
+            for (int currentRow = 0; currentRow < numbers.GetLength(rowsArray); currentRow++)
             {
-                for (int column = 0; column < numbers.GetLength(columnArray); column++)
+                for (int currentColumn = 0; currentColumn < numbers.GetLength(columnsArray); currentColumn++)
                 {
-                    numbers[row, column] = random.Next(1, 10);
+                    numbers[currentRow, currentColumn] = random.Next(1, 10);
                 }
             }
 
             Console.WriteLine("-----------------");
 
-            for (int row = 0; row < numbers.GetLength(rowArray); row++)
+            for (int currentRow = 0; currentRow < numbers.GetLength(rowsArray); currentRow++)
             {
-                for (int column = 0; column < numbers.GetLength(columnArray); column++)
+                for (int currentColumn = 0; currentColumn < numbers.GetLength(columnsArray); currentColumn++)
                 {
-                    Console.Write(" | " + numbers[row, column]);
+                    Console.Write(" | " + numbers[currentRow, currentColumn]);
                 }
                 Console.WriteLine(" | ");
             }
 
             Console.WriteLine("-----------------");
 
-            for (int column = 0; column < numbers.GetLength(columnArray); column++)
+            for (int currentColumn = 0; currentColumn < numbers.GetLength(columnsArray); currentColumn++)
             {
-                sumSecondRowArray += numbers[secondRowArray, column];
+                sumNumbersSecondRowArray += numbers[secondRowArray, currentColumn];
             }
 
-            for (int row = 0; row < numbers.GetLength(rowArray); row++)
+            for (int currentRow = 0; currentRow < numbers.GetLength(rowsArray); currentRow++)
             {
-                multiplicationFirsRowArray *= numbers[row, firstColumnArray];
+                multiplicationNumbersFirstRowArray *= numbers[currentRow, firstColumnArray];
             }
 
-            Console.WriteLine($"\nСумма второй строки: {sumSecondRowArray}");
-            Console.WriteLine($"\nПроизведение первого столбца: {multiplicationFirsRowArray}");
+            Console.WriteLine($"\nСумма второй строки: {sumNumbersSecondRowArray}");
+            Console.WriteLine($"\nПроизведение первого столбца: {multiplicationNumbersFirstRowArray}");
         }
     }
 }
